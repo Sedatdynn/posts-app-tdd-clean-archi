@@ -8,6 +8,9 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  #core
+  dartz: ^0.10.1
+  equatable: ^2.0.5
   flutter:
     sdk: flutter
   #Ui

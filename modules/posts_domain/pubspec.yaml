@@ -1,20 +1,31 @@
 name: posts_domain
 description: "A new Flutter package project."
+publish_to: none
 version: 0.0.1
 homepage:
 
 environment:
-  sdk: '>=3.2.0 <4.0.0'
+  sdk: ">=3.2.0 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
+  dartz: ^0.10.1
+  equatable: ^2.0.5
   flutter:
     sdk: flutter
+  json_annotation: ^4.8.1
+  #packages
+  core:
+    path: ../core/
 
 dev_dependencies:
+  bloc_test: ^9.1.5
+  build_runner: ^2.4.8
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  json_serializable: ^6.7.1
+  mocktail: ^1.0.2
+  very_good_analysis: ^5.1.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
