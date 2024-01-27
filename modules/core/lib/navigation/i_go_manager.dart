@@ -6,7 +6,7 @@ abstract class IGoManager {
     required String path,
     Object? data,
   });
-  Future push({
+  Future<void> push({
     required String path,
     Object? data,
   });

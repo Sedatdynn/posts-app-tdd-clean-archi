@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:posts_app/feature/splash/splash_view.dart';
 import 'package:posts_app/product/navigation/navigation_constants.dart';
 
 /// GoRouter configuration
@@ -7,7 +8,7 @@ final router = GoRouter(
     /// initial splash page
     GoRoute(
       path: NavigationConstants.initial,
-      // builder: (context, state) => SplashView(),
+      builder: (context, state) => const SplashView(),
     ),
   ],
 );

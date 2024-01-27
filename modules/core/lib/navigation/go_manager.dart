@@ -2,14 +2,13 @@ import 'package:core/navigation/i_go_manager.dart';
 import 'package:go_router/go_router.dart';
 
 class GoManager implements IGoManager {
+  GoManager._init();
   static final GoManager _instance = GoManager._init();
   static GoManager get instance => _instance;
-  GoManager._init();
-
   late GoRouter _router;
 
   @override
-  init(GoRouter router) {
+  void init(GoRouter router) {
     _router = router;
   }
 
@@ -26,7 +25,7 @@ class GoManager implements IGoManager {
   }
 
   @override
-  Future push({
+  Future<void> push({
     required String path,
     Map<String, String>? queryParameters,
     Object? data,
