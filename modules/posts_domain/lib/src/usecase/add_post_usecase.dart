@@ -17,6 +17,8 @@ class AddPostParams extends Equatable {
     required this.title,
     required this.body,
   });
+  const AddPostParams.empty() : this(userId: 1, title: 'empty_title', body: 'empty_body');
+
   final int userId;
   final String title;
   final String body;
