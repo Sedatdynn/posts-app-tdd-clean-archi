@@ -9,8 +9,8 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
-  #runner
-  build_runner: ^2.4.8
+  #core
+  dio: ^5.4.0
   equatable: ^2.0.5
   flutter:
     sdk: flutter
@@ -24,10 +24,14 @@ dependencies:
     path: ../posts_domain/
 
 dev_dependencies:
+  #runner
+  build_runner: ^2.4.8
   flutter_test:
     sdk: flutter
   #json
   json_serializable: ^6.7.1
+  #test
+  mocktail: ^1.0.2
   #lint
   very_good_analysis: ^5.1.0
 
