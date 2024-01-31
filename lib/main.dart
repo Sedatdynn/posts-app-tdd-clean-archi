@@ -1,7 +1,9 @@
 import 'package:core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:posts_app/app/initialize/app_initialize.dart';
+import 'package:posts_app/product/global/bloc/global_bloc.dart';
 import 'package:posts_app/product/navigation/go_routes.dart';
 
 Future<void> main() async {
@@ -14,17 +16,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      minTextAdapt: true,
-      splitScreenMode: true,
-      builder: (_, child) {
-        return MaterialApp.router(
-          debugShowCheckedModeBanner: false,
-          title: 'First Method',
-          theme: appLightTheme,
-          routerConfig: router,
-        );
-      },
+    return BlocProvider(
+      create: (context) => GlobalBloc(),
+      child: ScreenUtilInit(
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: (_, child) {
+          return MaterialApp.router(
+            debugShowCheckedModeBanner: false,
+            theme: appLightTheme,
+            routerConfig: router,
+          );
+        },
+      ),
     );
   }
 }

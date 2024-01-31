@@ -11,6 +11,7 @@ environment:
 dependencies:
   #core
   bloc: ^8.1.2
+  equatable: ^2.0.5
   connectivity: ^3.0.6
   cupertino_icons: ^1.0.2
   flutter:
