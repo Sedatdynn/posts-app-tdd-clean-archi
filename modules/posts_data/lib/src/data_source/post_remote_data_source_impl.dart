@@ -1,5 +1,4 @@
 import 'package:core/core.dart';
-import 'package:core/utils/typedef.dart';
 
 import 'package:dio/dio.dart';
 import 'package:posts_data/src/data_source/post_remote_data_source_abstract.dart';

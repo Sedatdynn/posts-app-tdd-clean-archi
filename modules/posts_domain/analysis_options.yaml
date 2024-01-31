@@ -1,4 +1,11 @@
 include: package:very_good_analysis/analysis_options.yaml
+analyzer:
+  exclude:
+    - test/
+    - pubspec.yaml
+  errors:
+    directives_ordering: warning
+    prefer_const_constructors: error
 linter:
   rules:
     public_member_api_docs: false
