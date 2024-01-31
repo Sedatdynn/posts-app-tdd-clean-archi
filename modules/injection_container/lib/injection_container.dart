@@ -1,7 +1,5 @@
+/// getIt dependency library
 library injection_container;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'package:injection_container/injection_container.dart';
+export 'package:injection_container/src/injection_container.dart';

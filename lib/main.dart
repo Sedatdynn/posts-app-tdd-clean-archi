@@ -2,6 +2,7 @@ import 'package:core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:injection_container/injection_container.dart';
 import 'package:posts_app/app/initialize/app_initialize.dart';
 import 'package:posts_app/product/global/bloc/global_bloc.dart';
 import 'package:posts_app/product/navigation/go_routes.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => GlobalBloc(),
+      create: (context) => locator<GlobalBloc>(),
       child: ScreenUtilInit(
         minTextAdapt: true,
         splitScreenMode: true,

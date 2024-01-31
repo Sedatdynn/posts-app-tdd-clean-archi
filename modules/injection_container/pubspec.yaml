@@ -1,6 +1,7 @@
 name: injection_container
 description: "A new Flutter package project."
 version: 0.0.1
+publish_to: none
 homepage:
 
 environment:
@@ -8,9 +9,17 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  dio: ^5.4.0
   flutter:
     sdk: flutter
   get_it: ^7.6.6
+  #packages
+  posts_app:
+    path: ../../
+  posts_domain:
+    path: ../posts_domain/
+  posts_data:
+    path: ../posts_data/
 
 dev_dependencies:
   flutter_test:
