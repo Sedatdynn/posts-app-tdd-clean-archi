@@ -31,6 +31,7 @@ class LocatorService {
       ..registerLazySingleton<PostsRemoteDataSource>(
         () => PostRemoteDataSourceImpl(locator()),
       )
+      //DIO
       ..registerLazySingleton(Dio.new);
   }
 }
