@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+import 'package:posts_app/feature/posts/bloc/bloc/posts_bloc.dart';
 import 'package:posts_app/product/global/bloc/global_bloc.dart';
 import 'package:posts_data/posts_data.dart';
 import 'package:posts_domain/posts_domain.dart';
@@ -15,8 +16,9 @@ class LocatorService {
       ..registerFactory(
         GlobalBloc.new,
       )
+      ..registerFactory(() => PostsBloc(getPostUseCase: locator(), addPostUseCase: locator()))
 
-      //USECASE
+      //USE CASE
       ..registerLazySingleton(
         () => GetPostUseCase(locator()),
       )

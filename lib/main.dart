@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:injection_container/injection_container.dart';
 import 'package:posts_app/app/initialize/app_initialize.dart';
+import 'package:posts_app/feature/posts/bloc/bloc/posts_bloc.dart';
 import 'package:posts_app/product/global/bloc/global_bloc.dart';
 import 'package:posts_app/product/navigation/go_routes.dart';
 
@@ -17,8 +18,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => locator<GlobalBloc>(),
+    return CustomBlocProviders(
       child: ScreenUtilInit(
         minTextAdapt: true,
         splitScreenMode: true,
@@ -32,4 +32,18 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
+}
+
+class CustomBlocProviders extends MultiBlocProvider {
+  CustomBlocProviders({required super.child, super.key})
+      : super(
+          providers: [
+            BlocProvider(
+              create: (context) => locator<GlobalBloc>(),
+            ),
+            BlocProvider(
+              create: (context) => locator<PostsBloc>(),
+            ),
+          ],
+        );
 }

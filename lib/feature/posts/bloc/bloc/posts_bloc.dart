@@ -14,6 +14,7 @@ class PostsBloc extends Bloc<PostsEvent, PostsState> {
         super(PostsState.initial()) {
     on<GetPostEvent>(_getPostsHandler);
     on<CreatePostEvent>(_createPostsHandler);
+    add(const GetPostEvent());
   }
 
   final GetPostUseCase _getPostUseCase;
