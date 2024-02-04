@@ -1,14 +1,4 @@
-import 'package:core/extension/context_extension.dart';
-import 'package:core/navigation/go_manager.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:posts_app/feature/posts/bloc/bloc/posts_bloc.dart';
-import 'package:posts_app/product/global/bloc/global_bloc.dart';
-import 'package:posts_app/product/widget/app_bar/custom_app_bar.dart';
-import 'package:posts_app/product/widget/error/error_widget.dart';
-import 'package:posts_app/product/widget/loading/loading_circular.dart';
-import 'package:posts_domain/posts_domain.dart';
+import 'package:posts_app/feature/posts/view/index.dart';
 part './post_home_subview.dart';
 part './widget/create_post_dialog.dart';
 

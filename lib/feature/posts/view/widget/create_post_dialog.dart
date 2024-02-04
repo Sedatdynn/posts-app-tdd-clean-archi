@@ -16,20 +16,8 @@ class CreatePostDialog extends StatelessWidget with CreateUserMixin {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              TextField(
-                controller: titleTextController,
-                keyboardType: TextInputType.name,
-                decoration: const InputDecoration(
-                  hintText: 'enter title',
-                ),
-              ),
-              TextField(
-                controller: bodyTextController,
-                keyboardType: TextInputType.name,
-                decoration: const InputDecoration(
-                  hintText: 'enter body',
-                ),
-              ),
+              CustomTextField(controller: titleTextController, hintText: 'enter title'),
+              CustomTextField(controller: bodyTextController, hintText: 'enter body'),
               SizedBox(
                 height: 12.h,
               ),
@@ -38,40 +26,12 @@ class CreatePostDialog extends StatelessWidget with CreateUserMixin {
                   if (state.isPostCreated == null || state.isPostCreated == false) return;
                   if (state.isPostCreated!) GoManager.instance.pop();
                 },
-                child: ActionChip(
-                  padding: EdgeInsets.all(12.w),
-                  backgroundColor: context.theme.colorScheme.secondary,
-                  label: Text(
-                    'Create user',
-                    style: context.textTheme.bodyLarge
-                        ?.copyWith(color: context.theme.colorScheme.background),
-                  ),
-                  avatar: const Icon(Icons.create),
-                  onPressed: () => createUser(context),
-                ),
+                child: CreatePostActionChip(onPressed: createUser),
               ),
             ],
           ),
         ),
       ),
     );
-  }
-}
-
-mixin CreateUserMixin {
-  final TextEditingController titleTextController = TextEditingController();
-  final TextEditingController bodyTextController = TextEditingController();
-
-  void createUser(BuildContext context) {
-    if (titleTextController.text.isEmpty || bodyTextController.text.isEmpty) {
-      return;
-    }
-    context.read<PostsBloc>().add(
-          CreatePostEvent(
-            userId: 1,
-            title: titleTextController.text,
-            body: bodyTextController.text,
-          ),
-        );
   }
 }
