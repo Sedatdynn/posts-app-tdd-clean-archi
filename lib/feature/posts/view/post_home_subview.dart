@@ -11,6 +11,8 @@ class PostsBodyList extends StatelessWidget {
       itemBuilder: (BuildContext context, int index) {
         return Card(
           child: ListTile(
+            onTap: () =>
+                GoManager.instance.push(path: NavigationConstants.detail, data: posts[index]),
             leading: CircleAvatar(child: Text(posts[index].id.toString())),
             title: Text(
               posts[index].title.toString(),
