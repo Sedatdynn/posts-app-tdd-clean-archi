@@ -1,6 +1,6 @@
 # Posts-app-tdd-clean-archi
 
-Posts-app  Application created with flutter by using TDD Clean Architecture with Bloc.
+Posts-app created with flutter by using TDD Clean Architecture with Bloc. In this app getting posts from API and can create posts. Also listen internet connection and handle situation depends on. 
 
 ### Libraries & Tools Used
 
@@ -58,7 +58,7 @@ modules/
 |- test/
 ```
 
-Now, lets dive into the modukes folder which has the main packages for the application.
+Now, lets dive into the modules folder which has the main packages for the application.
 
 ```
 1- core - Contains the business independent structures of the project.
