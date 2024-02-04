@@ -10,10 +10,10 @@ class CreatePostActionChip extends StatelessWidget {
   Widget build(BuildContext context) {
     return ActionChip(
       padding: EdgeInsets.all(12.w),
-      backgroundColor: context.theme.colorScheme.secondary,
+      backgroundColor: context.colorScheme.secondary,
       label: Text(
         'Create user',
-        style: context.textTheme.bodyLarge?.copyWith(color: context.theme.colorScheme.background),
+        style: context.textTheme.bodyLarge?.copyWith(color: context.colorScheme.background),
       ),
       avatar: const Icon(Icons.create),
       onPressed: () => onPressed(context),

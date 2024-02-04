@@ -12,7 +12,10 @@ class CreatePostDialog extends StatelessWidget with CreateUserMixin {
       child: Center(
         child: Container(
           padding: EdgeInsets.all(24.w),
-          decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(12)),
+          decoration: BoxDecoration(
+            color: context.colorScheme.background,
+            borderRadius: BorderRadius.circular(12),
+          ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
