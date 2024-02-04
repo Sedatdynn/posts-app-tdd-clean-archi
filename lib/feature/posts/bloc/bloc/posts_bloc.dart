@@ -26,10 +26,12 @@ class PostsBloc extends Bloc<PostsEvent, PostsState> {
     emit(state.copyWith(isLoading: true));
     final result = await _getPostUseCase();
     result.fold((failure) {
+      log('LEFT ERROR: ${failure.errorMessage}');
       emit(
         state.copyWith(errorMessage: failure.errorMessage, isLoading: false),
       );
     }, (posts) {
+      log('RIGHT SUCCESS: ');
       emit(state.copyWith(posts: posts, isLoading: false));
     });
   }
@@ -44,7 +46,6 @@ class PostsBloc extends Bloc<PostsEvent, PostsState> {
     );
     result.fold((failure) {
       log('LEFT ERROR: ${failure.errorMessage}');
-
       emit(
         state.copyWith(errorMessage: failure.errorMessage, isPostCreated: false, isLoading: false),
       );

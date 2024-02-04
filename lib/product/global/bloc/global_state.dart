@@ -6,7 +6,7 @@ class GlobalState extends Equatable {
   });
 
   factory GlobalState.initial() {
-    return const GlobalState(isConnected: false);
+    return const GlobalState(isConnected: true);
   }
 
   final bool isConnected;
