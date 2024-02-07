@@ -71,4 +71,28 @@ void main() {
     //assert
     expect(loadingCircular, findsOneWidget);
   });
+  testWidgets('should show posts Lists when Posts getting from Api', (widgetTester) async {
+    //arrange
+    when(() => mockGlobalBloc.state).thenReturn(
+      const GlobalState(isConnected: true),
+    );
+    when(() => mockPostBloc.state).thenReturn(
+      const PostsState(
+        posts: [PostEntity.empty()],
+        errorMessage: null,
+        isLoading: false,
+        isConnect: true,
+        isPostCreated: false,
+      ),
+    );
+
+    //act
+    await widgetTester.pumpWidget(testableWidget(const PostsHomeView()));
+    final postsList = find.byKey(const Key('posts_list'));
+    final postsListTile = find.byType(ListTile);
+
+    //assert
+    expect(postsList, findsOneWidget);
+    expect(postsListTile, findsOneWidget);
+  });
 }

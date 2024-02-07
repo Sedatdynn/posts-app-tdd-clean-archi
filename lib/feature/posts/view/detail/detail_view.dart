@@ -10,6 +10,7 @@ class PostsDetailView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        key: const Key('POST_DETAIL_VIEW'),
         body: Padding(
           padding: const EdgeInsets.all(12),
           child: Card(

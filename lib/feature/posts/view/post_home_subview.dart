@@ -7,6 +7,7 @@ class PostsBodyList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      key: const Key('posts_list'),
       itemCount: posts.length,
       itemBuilder: (BuildContext context, int index) {
         return Card(
