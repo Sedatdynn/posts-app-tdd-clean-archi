@@ -94,5 +94,11 @@ void main() {
     //assert
     expect(postsList, findsOneWidget);
     expect(postsListTile, findsOneWidget);
+    await widgetTester.tap(postsListTile);
+    await widgetTester.pumpAndSettle();
+    await widgetTester.pump(const Duration(seconds: 4));
+
+    final postDetail = find.byKey(const Key('POST_DETAIL_VIEW'));
+    expect(postDetail, findsOneWidget);
   });
 }

@@ -10,7 +10,7 @@ class SplashView extends StatelessWidget with SplashMixin {
 
   @override
   Widget build(BuildContext context) {
-    // navigate();
+    navigate();
     return Scaffold(
       body: Column(
         key: const Key('splash_column'),

@@ -25,6 +25,7 @@ class PostsDetailView extends StatelessWidget {
                     child: Text(post.id.toString()),
                   ),
                   Container(
+                    key: const Key('detail_container'),
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
                       color: context.colorScheme.onPrimaryContainer,
@@ -44,6 +45,7 @@ class PostsDetailView extends StatelessWidget {
                     height: 12,
                   ),
                   Text(
+                    key: const Key('detail_body_text'),
                     post.body.toString(),
                     style: context.textTheme.bodyLarge,
                     textAlign: TextAlign.justify,
