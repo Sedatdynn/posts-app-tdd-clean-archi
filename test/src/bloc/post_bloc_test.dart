@@ -23,13 +23,10 @@ void main() {
 
   const testPostEntity = [PostEntity.empty()];
   // in the beginning isLoading always true and posts is []
-  const firstPostState = PostsState(
-    posts: [],
-    errorMessage: null,
+  final firstPostState = PostsState.initial().copyWith(
     isLoading: true,
-    isConnect: true,
-    isPostCreated: null,
   );
+  final initialState = PostsState.initial();
   const testFailure = ServerFailure(message: 'ERROR', statusCode: 505);
 
   test('initial state should be [PostState.initial]', () {
@@ -48,12 +45,8 @@ void main() {
         // isLoading is true and posts empty list []
         firstPostState,
         // isLoading false and posts is not empty list anymore
-        const PostsState(
+        initialState.copyWith(
           posts: testPostEntity,
-          errorMessage: null,
-          isLoading: false,
-          isConnect: true,
-          isPostCreated: null,
         ),
       ],
     );
@@ -69,12 +62,8 @@ void main() {
         // isLoading is true and posts empty list []
         firstPostState,
         // isLoading false and posts is not empty list anymore
-        const PostsState(
-          posts: [],
+        initialState.copyWith(
           errorMessage: '505,  Error: ERROR',
-          isLoading: false,
-          isConnect: true,
-          isPostCreated: null,
         ),
       ],
     );
@@ -94,11 +83,7 @@ void main() {
         // isLoading is true and isPostCreated = null
         firstPostState,
         // isLoading false and isPostCreated = true
-        const PostsState(
-          posts: [],
-          errorMessage: null,
-          isLoading: false,
-          isConnect: true,
+        initialState.copyWith(
           isPostCreated: true,
         ),
       ],
@@ -117,11 +102,8 @@ void main() {
         // isLoading is true and isPostCreated = null
         firstPostState,
         // isLoading false and isPostCreated = false
-        const PostsState(
-          posts: [],
+        initialState.copyWith(
           errorMessage: '505,  Error: ERROR',
-          isLoading: false,
-          isConnect: true,
           isPostCreated: false,
         ),
       ],
